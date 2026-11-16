@@ -1,0 +1,7 @@
+[connection1]
+id=ConexionFutbolWebApp
+driver=ODBC_DRV
+connection=DSN=futbol
+UID=futbol_app
+; La contraseña se guarda cifrada desde DataFlex Studio:
+; Database > SQL Connection Manager > Edit > Password + Store Password

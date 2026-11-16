@@ -1,0 +1,14 @@
+# Conexión a la base de datos con la contraseña cifrada del usuario de servicio:
+# no se sube. Copia Data/DFConnId.ini.ejemplo a Data/DFConnId.ini y pon tus datos.
+Data/DFConnId.ini
+
+# Compilados, logs y archivos temporales de DataFlex
+Programs/*.exe
+*.log
+*.prn
+*.err
+*.dbg
+*.flx
+*.dep
+IdeSrc/Workspace.loc
+IdeSrc/*.dsk
