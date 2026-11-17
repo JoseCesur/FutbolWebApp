@@ -8,6 +8,8 @@ Use cWebMenuGroup.pkg
 Use cWebMenuItem.pkg
 Use cWebForm.pkg
 Use SelectEquipo.wo
+Use SelectPosicion.wo
+Use cWebButton.pkg
 
 Use cligaDataDictionary.dd
 Use cequipoDataDictionary.dd
@@ -77,6 +79,22 @@ Object oZoomJugador is a cWebView
             WebRegisterPath ntNavigateForward oSelectEquipo
 
             Procedure OnPrompt
+                Send NavigatePath
+            End_Procedure
+        End_Object 
+
+        // Undefined: boton que lleva desde un jugador al listado de posiciones.
+        // jugador y posicion no tienen relacion directa entre sus DDs (solo a traves
+        // de la tabla intermedia jugadorposicion), asi que el tipo es nfUndefined:
+        // no hay restriccion y Select posicion muestra todas las posiciones.
+        Object oVerPosicionesBtn is a cWebButton
+            Set piColumnSpan to 6
+            Set piColumnIndex to 0
+            Set psCaption to "Ver posiciones"
+
+            WebRegisterPath ntNavigateForward oSelectPosicion
+
+            Procedure OnClick
                 Send NavigatePath
             End_Procedure
         End_Object 
