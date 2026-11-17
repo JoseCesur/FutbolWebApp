@@ -17,7 +17,7 @@ Use cequipoDataDictionary.dd
 
 // SelectEquipo.wo no se puede incluir aqui con Use porque se formaria un ciclo
 // (SelectEquipo -> ZoomEquipo -> SelectLiga -> ZoomLiga). Se declara el nombre
-// del objeto y la navegacion se resuelve en tiempo de ejecucion.
+// del objeto con Register_Object para poder registrar la navegacion con WebRegisterPath.
 Register_Object oSelectEquipo
 
 Object oZoomLiga is a cWebView
@@ -87,8 +87,10 @@ Object oZoomLiga is a cWebView
             Set piColumnIndex to 0
             Set psCaption to "Ver equipos de esta liga"
 
+            WebRegisterPath ntNavigateForward oSelectEquipo
+
             Procedure OnClick
-                Send NavigateForward of oSelectEquipo Self
+                Send NavigatePath
             End_Procedure
 
             Procedure OnGetNavigateForwardData tWebNavigateData ByRef NavigateData Handle hoToView
