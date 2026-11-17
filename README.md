@@ -60,4 +60,6 @@ objeto que inició la navegación (la lista o el botón), no a la vista.
 
 `ZoomLiga.wo` no incluye `SelectEquipo.wo` con `Use` porque se formaría un ciclo
 (SelectEquipo > ZoomEquipo > SelectLiga > ZoomLiga). Se declara el objeto con `Register_Object`
-y el botón navega con `Send NavigateForward of oSelectEquipo Self`, que se resuelve en ejecución.
+y el botón registra el camino con `WebRegisterPath ntNavigateForward oSelectEquipo` y navega con
+`Send NavigatePath`. En DataFlex 25 la navegación tiene que estar registrada: con un
+`NavigateForward` sin registrar salta el error 4402 "Unregistered forward navigation path".
