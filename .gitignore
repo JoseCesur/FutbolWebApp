@@ -13,3 +13,5 @@ Programs/*.exe
 IdeSrc/Workspace.loc
 IdeSrc/*.dsk
 IdeSrc/*.mtd
+*.cch
+*.exe.manifest
